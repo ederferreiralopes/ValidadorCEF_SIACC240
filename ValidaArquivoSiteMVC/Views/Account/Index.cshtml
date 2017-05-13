@@ -1,0 +1,58 @@
+﻿@model ValidaArquivoSiteMVC.Models.UsuarioModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        img {
+            border: 3px solid;
+            border-color: cadetblue;
+            width: auto;
+            height: auto;
+        }
+
+    </style>
+    <div class="Jumbotron">
+        <div class="container">
+            <div class="row">
+                <h4>Acesso</h4>
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-inline", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(model => model.Senha, new { placeholder = "Senha", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Senha)
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Entrar" class="btn btn-primary" />@TempData["mensagem"]
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div id="" class="col-md-12">
+                        @Html.ActionLink("Cadastre-se ", "Cadastro")                        
+                </div>
+            </div>
+            <div class="row">
+                <div id="" class="col-md-12">
+                    <img class="img-responsive" src="~/images/logo.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/JQuery/jquery-1.11.3.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

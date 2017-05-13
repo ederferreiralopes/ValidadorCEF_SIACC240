@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ValidaArquivoSiteMVC.Models.ArquivoModel>
+@using System.Collections
+@{Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VALIDADOR v.2</title>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        #logValidacao {
+            background-color: cadetblue;
+        }
+
+        #div01 {
+            padding: 3px;
+            border: 3px solid;
+            border-color: cadetblue;
+            background-color: #CCCCCC;
+        }
+    </style>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div id="coluna01" class="col-md-2">
+                    <img class="img-responsive" src="~/images/logo.jpg" />
+                </div>
+                <div class="col-md-10">
+                    <div id="div01" class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <legend>
+                                    VALIDADOR ARQUIVO CEF SIACC 240
+                                    <label class="label" id="label01"> @TempData["mensagem"] @Html.ActionLink(" Sair ", "Logout", "Account") </label>
+                                </legend>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="logValidacao" class="col-md-12">
+                            @foreach (var log in Model)
+                            {
+                                <div class="col-md-1">
+                                    <span> @log.Id </span>
+                                </div>
+                                <div class="col-md-3">
+                                    <span> @log.Responsavel </span>
+                                </div>
+                                <div class="col-md-3">
+                                    <span> @log.Data </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span> @log.Nome </span>
+                                </div>
+                                <div class="col-md-1">
+                                    <span> @log.Tipo </span>
+                                </div>
+                                <div class="col-md-12">
+                                    Validação: 
+                                    <span> @log.Validacao </span>
+                                </div>
+                                <br /><br /><br />
+                            }                
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+    <script src="~/JQuery/jquery-1.11.3.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

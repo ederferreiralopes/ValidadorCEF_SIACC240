@@ -1,0 +1,140 @@
+﻿@model ValidaArquivoSiteMVC.Models.ArquivoModel
+@using System.Collections
+@{Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VALIDADOR v.2</title>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        #textoValidacao {
+            background-color: cadetblue;
+        }
+
+        #textoValidacao_orginal {
+            visibility: hidden;
+        }
+
+        #div01 {
+            padding: 3px;
+            border: 3px solid;
+            border-color: cadetblue;
+            background-color: #CCCCCC;
+        }
+
+        img {
+            border: 3px solid;
+            border-color: cadetblue;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div id="coluna01" class="col-md-2">
+                    <img class="img-responsive" src="~/images/logo.jpg" />
+                </div>
+                <div class="col-md-10">
+                    <div id="div01" class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <span>
+                                    VALIDADOR ARQUIVO CEF SIACC 240
+                                    <label class="label" id="label01"> @TempData["mensagem"] @Html.ActionLink(" Sair ", "Logout", "Account") </label>
+                                </span>
+                            </div>
+                            @using (@Html.BeginForm("ValidaArquivoCEF", "Home", FormMethod.Post, new { id = "form1", enctype = "multipart/form-data" }))
+                            {
+                                <div class="row">
+                                    <input class="btn btn-primary" type="file" id="Arquivo" name="Arquivo" value="arquivo." />
+                                    @Html.RadioButtonFor(x => x.Tipo, "REM", new { @class = "remessa", @checked = "checked" }) @Html.Label("Remessa")
+                                    @Html.RadioButtonFor(x => x.Tipo, "RET", new { @class = "retorno" }) @Html.Label("Retorno")
+                                </div>
+                                <div class="row">
+                                    <input id="bt_Validar" class="btn btn-primary" type="button" value="Validar" onclick="validacaoPrevia()" />
+                                    <input class="btn btn-primary" id="gerapdf" type="button" value="Gerar PDF" onclick="VerificarConteudo()" />
+                                    <input id="bt_Limpar" class="btn btn-primary" type="button" onclick="limpar()" value="Limpar" />
+                                    <input id="busca" type="text" value="" size="12" />
+                                    <input id="bt_busca" class="btn btn-primary" type="button" onclick="destacaTexto()" value="Destacar" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="textoValidacao" class="col-md-12">
+                            <span>
+                                <!-- texto validação -->
+                                @Html.DisplayTextFor(x => x.Validacao)
+                            </span>
+                        </div>
+                        <div id="textoValidacao_orginal" class="col-md-12">
+                            <span>
+                                @Html.DisplayTextFor(x => x.Validacao)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--fin do conteiner -->
+    </div>
+    <script src="~/JQuery/jquery-1.11.3.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        function destacaTexto() {
+            var palavra = document.getElementById("busca").value.trim();
+
+            if (palavra.length > 0) {
+                var regex = new RegExp(palavra, "gi");
+                document.getElementById("textoValidacao").innerHTML = document.getElementById("textoValidacao_orginal").innerHTML.replace(regex, "<font style='color:#b22222'><b>" + palavra + "</b></font>");
+            }
+            else {
+                alert("Digite algo, por favor!");
+            }            
+        }
+
+        function mostrarOculto() {
+            document.getElementById("busca").style.visibility = "visible";
+            document.getElementById("bt_busca").style.visibility = "visible";
+            document.getElementById("bt_busca").currentStyle.visibility = "visible";
+        }
+
+        function limpar() {
+            document.getElementById("textoValidacao").textContent = "";
+        }
+
+        function getTextoValidacao() {
+            document.getElementById("textoValidacao").innerHTML = localStorage.getItem("textoOriginal");
+        }
+
+        function validacaoPrevia() {
+            var btn_arquivo = document.getElementById("Arquivo").value;
+            if (btn_arquivo.length < 1) {
+                alert("escolha um arquivo!");
+                return;
+            }
+            else {
+                document.forms["form1"].submit();
+            }
+        }
+
+        function VerificarConteudo() {
+            debugger;
+            var tamanhoTexto = document.getElementById("textoValidacao").textContent.trim().length;
+
+            if (tamanhoTexto < 1) {
+                alert("Não há conteúdo para gerar PDF!");
+            }
+            else {
+                window.location.href = 'GeneratePDF';
+            }
+        }
+    </script>
+</body>
+</html>

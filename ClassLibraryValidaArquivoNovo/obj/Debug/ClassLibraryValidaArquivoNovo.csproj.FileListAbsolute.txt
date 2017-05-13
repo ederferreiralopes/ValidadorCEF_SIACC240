@@ -1,0 +1,7 @@
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\bin\Debug\ClassLibraryValidaArquivoNovo.dll.config
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\bin\Debug\ClassLibraryValidaArquivoNovo.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\bin\Debug\ClassLibraryValidaArquivoNovo.pdb
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\obj\Debug\ClassLibraryValidaArquivoNovo.Properties.Resources.resources
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\obj\Debug\ClassLibraryValidaArquivoNovo.csproj.GenerateResource.Cache
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\obj\Debug\ClassLibraryValidaArquivoNovo.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\ClassLibraryValidaArquivoNovo\obj\Debug\ClassLibraryValidaArquivoNovo.pdb

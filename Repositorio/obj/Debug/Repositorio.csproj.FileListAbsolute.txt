@@ -1,0 +1,15 @@
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\Repositorio.dll.config
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\Repositorio.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\Repositorio.pdb
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\FluentNHibernate.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\Iesi.Collections.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\NHibernate.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\System.Net.Http.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\FluentNHibernate.pdb
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\FluentNHibernate.xml
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\Iesi.Collections.xml
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\NHibernate.xml
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\bin\Debug\System.Net.Http.xml
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\obj\Debug\Repositorio.dll
+D:\ValidaArquivoCEF-master\ValidaArquivoCEF-master\Repositorio\obj\Debug\Repositorio.pdb
